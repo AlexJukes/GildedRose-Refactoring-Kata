@@ -9,5 +9,7 @@ describe GildedRose do
       expect(items[0].name).to eq "foo"
     end
 
+  describe
+
   end
 end

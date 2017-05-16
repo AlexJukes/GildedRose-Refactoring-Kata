@@ -22,6 +22,12 @@ describe StandardItem do
       old_boots.update_quality
       expect(old_boots.quality).to eq(0)
     end
+
+    it 'never reduces the quality below 0' do
+      old_boots.update_quality
+      old_boots.update_quality
+      expect(old_boots.quality).to eq(0)
+    end
   end
 
   describe '#update_status' do

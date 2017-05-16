@@ -2,6 +2,7 @@ class StandardItem < Item
 
   DEFAULT_AMOUNT = 1
   SELL_BY_LIMIT = 0
+  MINIMUM_QUALITY = 0
 
   def initialize(args)
     @name = args[:name]
@@ -19,6 +20,7 @@ class StandardItem < Item
   end
 
   def update_quality
+    return if quality == MINIMUM_QUALITY
     if sell_in <= SELL_BY_LIMIT
     quality_penalty_reduction
     else
