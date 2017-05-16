@@ -1,6 +1,8 @@
 #!/usr/bin/ruby -w
 
-require File.join(File.dirname(__FILE__), 'gilded_rose')
+require './lib/gilded_rose'
+require './lib/item'
+require './lib/standard_item'
 
 puts "OMGHAI!"
 items = [
