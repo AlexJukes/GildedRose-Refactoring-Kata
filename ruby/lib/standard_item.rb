@@ -9,6 +9,11 @@ class StandardItem < Item
     @sell_in = args[:sell_in]
   end
 
+  def update_status
+    update_sell_in
+    update_quality
+  end
+
   def update_sell_in
     self.sell_in -= DEFAULT_AMOUNT
   end

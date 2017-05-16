@@ -23,4 +23,12 @@ describe StandardItem do
       expect(old_boots.quality).to eq(0)
     end
   end
+
+  describe '#update_status' do
+    it 'updates the sell_in and quality status of the item' do
+      boots.update_status
+      expect(boots.sell_in).to eq(2)
+      expect(boots.quality).to eq(2)
+    end
+  end
 end
