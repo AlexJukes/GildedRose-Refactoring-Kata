@@ -14,17 +14,20 @@ class StandardItem < Item
   end
 
   def update_quality
-    penalty_reduction if sell_in <= SELL_BY_LIMIT
-    reduction
+    if sell_in <= SELL_BY_LIMIT
+    quality_penalty_reduction
+    else
+    quality_reduction
+    end
   end
 
   private
 
-  def reduction
+  def quality_reduction
     self.quality -= DEFAULT_AMOUNT
   end
 
-  def penalty_reduction
-    self.sell_in -= DEFAULT_AMOUNT * 2
+  def quality_penalty_reduction
+    self.quality -= DEFAULT_AMOUNT * 2
   end
 end
