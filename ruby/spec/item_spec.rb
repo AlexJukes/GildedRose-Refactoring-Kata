@@ -11,4 +11,10 @@ describe Item do
     end
   end
 
+  describe '#to_s' do
+    it 'prints the item details as a string' do
+      expect(item.to_s).to eq("Jacket, 3, 3")
+    end
+  end
+
 end
