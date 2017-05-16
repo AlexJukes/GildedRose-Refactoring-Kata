@@ -11,4 +11,8 @@ class StandardItem < Item
   def update_sell_in
     self.sell_in -= DEFAULT_AMOUNT
   end
+
+  def update_quality
+    self.quality -= DEFAULT_AMOUNT
+  end
 end
