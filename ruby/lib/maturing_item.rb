@@ -7,6 +7,7 @@ class MaturingItem < StandardItem
   end
 
   def update_quality
+    return if sell_in == MAXIMUM_QUALITY
     quality_increase
   end
 
