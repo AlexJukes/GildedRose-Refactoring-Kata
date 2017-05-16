@@ -3,6 +3,7 @@ class StandardItem < Item
   DEFAULT_AMOUNT = 1
   SELL_BY_LIMIT = 0
   MINIMUM_QUALITY = 0
+  MAXIMUM_QUALITY = 50
 
   def initialize(args)
     @name = args[:name]
