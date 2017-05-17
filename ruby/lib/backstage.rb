@@ -1,18 +1,14 @@
-require_relative 'standard_item'
+require_relative 'maturing_item'
 
 
 
-class Backstage < StandardItem
+class Backstage < MaturingItem
 
   CONCERT_SOON = 10
   CONCERT_VERY_SOON = 5
 
   def initialize(args)
     super
-  end
-
-  def update_quality
-    quality_increase
   end
 
   def quality_increase

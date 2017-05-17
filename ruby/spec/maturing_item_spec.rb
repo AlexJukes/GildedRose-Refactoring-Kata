@@ -3,7 +3,7 @@ require 'maturing_item'
 describe MaturingItem do
 
   let(:maturing_item) {described_class.new(name: "Stinking Archbishop", quality: 3, sell_in: 3)}
-  let(:very_mature_item) {described_class.new(name: "Reeky Pope", quality: 50, sell_in: 3)}
+  let(:very_mature_item) {described_class.new(name: "Reeky Pope", quality: 49, sell_in: 3)}
 
   describe '#update_quality' do
 
@@ -13,6 +13,8 @@ describe MaturingItem do
     end
 
     it 'should not increase the quality beyond the upper limit of 50' do
+      very_mature_item.update_quality
+      expect(very_mature_item.quality).to eq(50)
       very_mature_item.update_quality
       expect(very_mature_item.quality).to eq(50)
     end

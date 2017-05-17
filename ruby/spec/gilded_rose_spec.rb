@@ -2,10 +2,10 @@ require 'gilded_rose'
 
 describe GildedRose do
 
-  describe "#update_quality" do
+  describe "#update_status" do
     it "does not change the name" do
-      items = [Item.new("foo", 0, 0)]
-      GildedRose.new(items).update_quality()
+      items = [StandardItem.new(name: "foo",quality: 0, sell_in: 0)]
+      GildedRose.new(items).update_status
       expect(items[0].name).to eq "foo"
     end
 

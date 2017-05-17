@@ -1,6 +1,6 @@
 #!/usr/bin/ruby -w
 
-require './lib/embossed_lilly'
+require './lib/gilded_rose'
 require './lib/item'
 require './lib/standard_item'
 require './lib/maturing_item'
@@ -18,8 +18,7 @@ items = [
   Backstage.new(name:"Backstage passes to a TAFKAL80ETC concert", sell_in:15, quality:20),
   Backstage.new(name:"Backstage passes to a TAFKAL80ETC concert", sell_in:10, quality:49),
   Backstage.new(name:"Backstage passes to a TAFKAL80ETC concert", sell_in:5, quality:49),
-  # This Conjured item does not work properly yet
-  Conjured.new(name:"Conjured Mana Cake", sell_in: 3, quality: 6), # <-- :O
+  Conjured.new(name:"Conjured Mana Cake", sell_in: 3, quality: 6)
 ]
 
 days = 7
@@ -27,7 +26,7 @@ if ARGV.size > 0
   days = ARGV[0].to_i + 1
 end
 
-embossed_lilly = EmbossedLilly.new items
+gilded_rose = GildedRose.new items
 (0...days).each do |day|
   puts "-------- day #{day} --------"
   puts "name, sellIn, quality"
@@ -35,5 +34,5 @@ embossed_lilly = EmbossedLilly.new items
     puts item
   end
   puts ""
-  embossed_lilly.update_status
+  gilded_rose.update_status
 end
