@@ -23,14 +23,16 @@ describe StandardItem do
       expect(old_boots.quality).to eq(0)
     end
 
-    it 'never reduces the quality below 0' do
-      old_boots.update_quality
-      old_boots.update_quality
-      expect(old_boots.quality).to eq(0)
-    end
   end
 
   describe '#update_status' do
+
+    it 'never reduces the quality below 0' do
+      old_boots.update_status
+      old_boots.update_status
+      expect(old_boots.quality).to eq(0)
+    end
+
     it 'updates the sell_in and quality status of the item' do
       boots.update_status
       expect(boots.sell_in).to eq(2)

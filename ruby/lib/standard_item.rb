@@ -15,6 +15,7 @@ class StandardItem < Item
 
   def update_status
     update_sell_in
+    return if quality == 0
     update_quality
   end
 
