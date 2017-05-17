@@ -3,6 +3,7 @@ require './lib/item'
 class StandardItem < Item
 
   DEFAULT_AMOUNT = 1
+  DOUBLE_AMOUNT = 2
   SELL_BY_LIMIT = 0
   MINIMUM_QUALITY = 0
   MAXIMUM_QUALITY = 50
@@ -15,7 +16,7 @@ class StandardItem < Item
 
   def update_status
     update_sell_in
-    return if quality == 0
+    return if quality == MINIMUM_QUALITY
     update_quality
   end
 
@@ -39,6 +40,6 @@ class StandardItem < Item
   end
 
   def quality_penalty_reduction
-    self.quality -= DEFAULT_AMOUNT * 2
+    self.quality -= DOUBLE_AMOUNT
   end
 end

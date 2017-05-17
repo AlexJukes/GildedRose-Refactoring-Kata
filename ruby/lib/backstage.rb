@@ -1,6 +1,11 @@
 require_relative 'standard_item'
 
+
+
 class Backstage < StandardItem
+
+  CONCERT_SOON = 10
+  CONCERT_VERY_SOON = 5
 
   def initialize(args)
     super
@@ -11,14 +16,14 @@ class Backstage < StandardItem
   end
 
   def quality_increase
-   return expire if sell_in <= 0
-    self.quality += 1 if sell_in <= 5
-    self.quality += 1 if sell_in <= 10
-    self.quality += 1
+   return expire if sell_in <= SELL_BY_LIMIT
+    self.quality += DEFAULT_AMOUNT if sell_in <= CONCERT_VERY_SOON
+    self.quality += DEFAULT_AMOUNT if sell_in <= CONCERT_SOON
+    self.quality += DEFAULT_AMOUNT
   end
 
   def expire
-    self.quality = 0
+    self.quality = MINIMUM_QUALITY
   end
 
 end

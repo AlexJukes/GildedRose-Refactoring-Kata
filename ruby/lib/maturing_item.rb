@@ -14,7 +14,7 @@ class MaturingItem < StandardItem
   private
 
   def quality_increase
-    self.quality += 1
+    self.quality += DEFAULT_AMOUNT
   end
 
 end
