@@ -1,4 +1,4 @@
-require 'item'
+require './lib/item'
 
 class StandardItem < Item
 
