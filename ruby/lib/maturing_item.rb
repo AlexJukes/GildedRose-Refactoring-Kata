@@ -7,8 +7,8 @@ class MaturingItem < StandardItem
   end
 
   def update_quality
-    return if quality == MAXIMUM_QUALITY
     quality_increase
+    self.quality = MAXIMUM_QUALITY if quality >= 50
   end
 
   private

@@ -1,16 +1,19 @@
-require_relative 'maturing_item'
+require_relative 'standard_item'
 
-class Backstage < MaturingItem
+class Backstage < StandardItem
 
   def initialize(args)
     super
   end
 
+  def update_quality
+    quality_increase
+  end
 
   def quality_increase
-    return expire if sell_in == 0
-    return self.quality += 3 if sell_in <= 5
-    return self.quality += 2 if sell_in <= 10
+   return expire if sell_in <= 0
+    self.quality += 1 if sell_in <= 5
+    self.quality += 1 if sell_in <= 10
     self.quality += 1
   end
 
