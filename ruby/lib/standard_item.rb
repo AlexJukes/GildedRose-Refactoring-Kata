@@ -1,3 +1,5 @@
+require 'item'
+
 class StandardItem < Item
 
   DEFAULT_AMOUNT = 1
