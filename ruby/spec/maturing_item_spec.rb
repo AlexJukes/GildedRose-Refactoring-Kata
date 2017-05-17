@@ -15,7 +15,6 @@ describe MaturingItem do
     it 'should not increase the quality beyond the upper limit of 50' do
       very_mature_item.update_quality
       expect(very_mature_item.quality).to eq(50)
-      #expect{very_mature_item.update_quality}.to_not change{very_mature_item.quality}.by(1)
     end
   end
 
