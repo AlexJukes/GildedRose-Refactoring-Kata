@@ -12,9 +12,9 @@ class Backstage < MaturingItem
   end
 
   def quality_increase
-   return expire if sell_in <= SELL_BY_LIMIT
-    self.quality += DEFAULT_AMOUNT if sell_in <= CONCERT_VERY_SOON
-    self.quality += DEFAULT_AMOUNT if sell_in <= CONCERT_SOON
+   return expire if sell_in < SELL_BY_LIMIT
+    self.quality += DEFAULT_AMOUNT if sell_in < CONCERT_VERY_SOON
+    self.quality += DEFAULT_AMOUNT if sell_in < CONCERT_SOON
     self.quality += DEFAULT_AMOUNT
   end
 

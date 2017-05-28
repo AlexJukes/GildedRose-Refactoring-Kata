@@ -3,7 +3,7 @@ require 'standard_item'
 describe StandardItem do
 
   let(:boots) {described_class.new(name: "Boots", quality: 3, sell_in: 3)}
-  let(:old_boots) {described_class.new(name: "Old Boots", quality: 2, sell_in: 0)}
+  let(:old_boots) {described_class.new(name: "Old Boots", quality: 2, sell_in: -1)}
 
   describe '#update_sell_in' do
     it 'reduces the number of days remaining to sell by 1' do

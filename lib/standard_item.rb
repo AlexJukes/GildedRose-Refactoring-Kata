@@ -16,7 +16,7 @@ class StandardItem < Item
 
   def update_status
     update_sell_in
-    return if quality == MINIMUM_QUALITY
+    # return if quality == MINIMUM_QUALITY
     update_quality
   end
 
@@ -26,11 +26,8 @@ class StandardItem < Item
 
   def update_quality
     return if quality == MINIMUM_QUALITY
-    if sell_in <= SELL_BY_LIMIT
-    quality_penalty_reduction
-    else
+    quality_reduction if sell_in < SELL_BY_LIMIT
     quality_reduction
-    end
   end
 
   private

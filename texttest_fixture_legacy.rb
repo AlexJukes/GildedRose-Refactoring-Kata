@@ -1,8 +1,6 @@
 #!/usr/bin/ruby -w
 
-require './lib/gilded_rose'
-require './lib/item'
-require './lib/standard_item'
+require_relative '../lib/original_gilded_rose'
 
 puts "OMGHAI!"
 items = [
@@ -23,7 +21,7 @@ if ARGV.size > 0
   days = ARGV[0].to_i + 1
 end
 
-gilded_rose = GildedRose.new items
+gilded_rose = OriginalGildedRose.new items
 (0...days).each do |day|
   puts "-------- day #{day} --------"
   puts "name, sellIn, quality"
