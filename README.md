@@ -26,4 +26,6 @@ The newly refactored code, including the functional Conjured item class, can be 
 Screenshot
 -----
 
+Comparison of original with refactored Gilded Rose class. 
+
 ![Original versus refactored Gilded Rose class](images/before-and-after-screenshot.png)
